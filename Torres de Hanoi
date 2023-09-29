@@ -1,0 +1,14 @@
+def hanoi(altura, inicio, intermedio, final):
+    if altura == 1:
+        print(f"Mover disco {altura} desde {inicio} hasta {final}")
+    else:
+        hanoi(altura - 1, inicio, final, intermedio)
+        print(f"Mover disco {altura} desde {inicio} hasta {final}")
+        hanoi(altura - 1, intermedio, inicio, final)
+
+altura = int(input("Ingresa el número de discos que deseas: "))
+
+if altura > 7:
+    print("Solo se permite hasta 7 bloques")
+else:
+    hanoi(altura, 'Torre A', 'Torre B', 'Torre C')
